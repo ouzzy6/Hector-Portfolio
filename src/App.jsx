@@ -1,6 +1,7 @@
 import React from 'react'
 import './index.css'
 import { projects } from './data/projects'
+import ProjectImage from '../components/ProjectImage'
 
 function App() {
   return (
@@ -72,10 +73,16 @@ function App() {
               )}
             </div>
             
-            {/* Placeholder de imagen (ahora después de la información) */}
-            <div className="project-image-placeholder">
-              {project.title}
-            </div>
+            {/* Bloques de imágenes */}
+            {project.imageBlocks && project.imageBlocks.map((block, index) => (
+              <ProjectImage 
+                key={index}
+                images={block.images} 
+                type={block.type}
+                aspect={block.aspect}  // ← ¡AÑADIDO!
+                title={project.title}
+              />
+            ))}
           </section>
         ))}
       </main>
