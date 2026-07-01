@@ -99,7 +99,7 @@ body {
 
 /* Contenido principal a la derecha */
 .main-content {
-  margin-left: 60%;
+  margin-left: 320px;
   padding: 1rem 1rem 1rem 1rem;
   width: calc(100% - 320px);
   min-height: 100vh;
@@ -255,8 +255,8 @@ body {
 
 /* Tamaño pequeño para imágenes cuadradas */
 .project-image-small {
-  max-width: 350px;  /* ← Ancho máximo reducido */
-  margin-left: 0;    /* ← Alineado a la izquierda (opcional) */
+  max-width: 350px;
+  margin-left: 0;
   margin-right: auto;
 }
 
@@ -453,63 +453,149 @@ body {
   z-index: 10;
 }
 
-/* Ajustes responsive */
+/* ============================================ */
+/*            RESPONSIVE - MÓVIL                */
+/* ============================================ */
 @media (max-width: 768px) {
+  /* Ocultar completamente el sidebar */
   .sidebar {
-    position: relative;
-    width: 100%;
-    height: auto;
-    border-right: none;
-    border-bottom: 1px solid #333;
-    padding: 1.5rem;
+    display: none;
   }
 
+  /* El contenido ocupa el 100% sin margen */
   .main-content {
     margin-left: 0;
     width: 100%;
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1.2rem;
   }
 
+  /* Quitar estilos de navegación (ya no existe) */
   .work-nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.5rem 1rem;
-  }
-
-  .nav-link.project-link {
-    padding-left: 0;
+    display: none;
   }
 
   .sidebar-footer {
     display: none;
   }
 
-  .project-image-placeholder {
-    height: 200px;
+  /* Proyectos ocupan todo el ancho */
+  .project-section {
+    max-width: 100%;
+    margin-bottom: 4rem;
   }
 
+  /* Introducción ocupa todo el ancho */
+  .intro-section {
+    max-width: 100%;
+  }
+
+  .intro-text {
+    max-width: 100%;
+    font-size: 13px;
+  }
+
+  /* Tamaños de texto */
   .project-title {
     font-size: 15px;
   }
 
-  .intro-text {
+  .project-meta,
+  .project-year,
+  .project-client,
+  .project-description {
     font-size: 13px;
   }
 
-  .project-header {
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .project-image {
-    height: 250px;
-  }
-
-  .project-image-square {
+  .project-description {
     max-width: 100%;
   }
-  
+
+  /* Proyectos con imagen y texto lado a lado → apilados */
+  .project-image-with-text {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .project-image-with-text .project-image-container {
+    width: 100%;
+  }
+
+  .project-image-with-text .project-text-container {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  /* Grid de 2 columnas → 1 columna */
+  .project-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem;
+  }
+
+  /* Tamaños small ocupan el 100% */
+  .project-image-small {
+    max-width: 100% !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .project-image-square.project-image-small {
+    max-width: 100% !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Cuadrados ocupan todo el ancho */
+  .project-image-square {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Placeholder de imágenes */
+  .project-image-placeholder {
+    height: 200px;
+  }
+
+  /* Contenedor de imágenes */
   .project-image-container {
     margin-top: 1rem;
+  }
+
+  /* Grid pequeño ocupa 100% */
+  .project-grid.project-image-small {
+    max-width: 100%;
+  }
+
+  /* Lightbox en móvil */
+  .lightbox-content {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+
+  .lightbox-media {
+    max-width: 95vw;
+    max-height: 80vh;
+  }
+
+  .lightbox-nav {
+    font-size: 2rem;
+    padding: 0.5rem 0.3rem;
+  }
+
+  .lightbox-prev {
+    left: 0.5rem;
+  }
+
+  .lightbox-next {
+    right: 0.5rem;
+  }
+
+  .lightbox-close {
+    top: -2rem;
+    font-size: 1.5rem;
+  }
+
+  .lightbox-indicators {
+    bottom: -2rem;
   }
 }
