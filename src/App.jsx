@@ -1,9 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './index.css'
 import { projects } from './data/projects'
 import ProjectImage from '../components/ProjectImage'
+import Lightbox from '../components/Lightbox'
 
 function App() {
+  const [lightboxMedia, setLightboxMedia] = useState(null)
+
+  const handleMediaClick = (media, index = 0) => {
+    // Si media es un array, lo pasamos como está
+    if (Array.isArray(media)) {
+      setLightboxMedia(media)
+    } else {
+      setLightboxMedia([media])
+    }
+  }
+
+  const handleCloseLightbox = () => {
+    setLightboxMedia(null)
+  }
+
   return (
     <div className="app-layout">
       {/* Sidebar fijo a la izquierda */}
@@ -79,13 +95,25 @@ function App() {
                 key={index}
                 images={block.images} 
                 type={block.type}
-                aspect={block.aspect}  // ← ¡AÑADIDO!
+                aspect={block.aspect}
+                size={block.size}
+                columns={block.columns}
+                text={block.text}
                 title={project.title}
+                onMediaClick={handleMediaClick}
               />
             ))}
           </section>
         ))}
       </main>
+
+      {/* Lightbox */}
+      {lightboxMedia && (
+        <Lightbox 
+          media={lightboxMedia} 
+          onClose={handleCloseLightbox} 
+        />
+      )}
     </div>
   )
 }

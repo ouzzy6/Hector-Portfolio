@@ -253,6 +253,206 @@ body {
   margin-top: 1rem;
 }
 
+/* Tamaño pequeño para imágenes cuadradas */
+.project-image-small {
+  max-width: 350px;  /* ← Ancho máximo reducido */
+  margin-left: 0;    /* ← Alineado a la izquierda (opcional) */
+  margin-right: auto;
+}
+
+/* Tamaño completo (por defecto) */
+.project-image-full {
+  max-width: 100%;
+}
+
+/* Para que el tamaño pequeño también herede el aspecto cuadrado */
+.project-image-square.project-image-small {
+  max-width: 350px;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Layout imagen + texto lado a lado */
+.project-image-with-text {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+}
+
+.project-image-with-text .project-image-container {
+  flex: 0 0 auto;
+  margin-top: 0;
+}
+
+.project-image-with-text .project-text-container {
+  flex: 1;
+  padding-top: 0rem;
+}
+
+/* Estilos para el texto */
+.project-text {
+  font-family: 'Space Mono', 'Courier New', monospace;
+  font-size: 13px;
+  color: #969696;
+  line-height: 1.8;
+}
+
+.project-text-line {
+  margin: 0;
+  padding: 0;
+  white-space: pre-wrap;
+}
+
+/* Para el texto indentado (espacios al inicio) */
+.project-text-line {
+  white-space: pre-wrap;
+}
+
+/* Grid de imágenes/videos */
+.project-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.project-grid-item {
+  width: 100%;
+  overflow: hidden;
+  background-color: #2a2a2a;
+}
+
+.project-grid-item .project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Para grid pequeño */
+.project-grid.project-image-small {
+  max-width: 600px;
+}
+
+/* Lightbox / Modal */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  cursor: default;
+}
+
+.lightbox-media {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+  transform: scale(1.2);
+}
+
+/* Para videos en lightbox */
+.lightbox-content video {
+  max-width: 90vw;
+  max-height: 85vh;
+}
+
+/* Navegación del lightbox */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #ffffff;
+  font-size: 3rem;
+  padding: 1rem 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  z-index: 10;
+  border-radius: 4px;
+}
+
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox-prev {
+  left: 1rem;
+}
+
+.lightbox-next {
+  right: 1rem;
+}
+
+/* Indicadores del lightbox */
+.lightbox-indicators {
+  position: absolute;
+  bottom: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.lightbox-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.lightbox-indicator.active {
+  background-color: #FBFF00;
+}
+
+/* Ajustar posición del botón cerrar */
+.lightbox-close {
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.2s ease;
+  z-index: 10;
+}
+
 /* Ajustes responsive */
 @media (max-width: 768px) {
   .sidebar {

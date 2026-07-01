@@ -43,6 +43,10 @@ export const projects = [
           '/images/7.jpg',
           '/images/8.jpg'
         ]
+      },
+      {
+        type: 'single',
+        images: ['./videos/HOME ss25_INSTAGRAM.mp4']
       }
     ]
   },
@@ -52,15 +56,25 @@ export const projects = [
     category: 'Cover design',
     year: '2025',
     client: 'DJ BIXBITA',
-    description: 'Cover artwork for "GUNSHOT" by the Berlin - BCN based DJ BIXBITA. \n\n A post-industrial aesthetic set in a ruined environment, where a female figure in red becomes the visual focus. The strong color contrast and aggressive typography reinforce a sense of impact and energy. The composition blends organic and digital textures, conveying an intense and experimental sonic identity. \n\n GUNSHOT // Single Cover Artwork // December 16, 2025 // © 2025 BIXBITA ',
+    description: 'Cover artwork for "GUNSHOT" by the Berlin - BCN based DJ BIXBITA. \n\n A post-industrial aesthetic set in a ruined environment, where a female figure in red becomes the visual focus. The strong color contrast and aggressive typography reinforce a sense of impact and energy. The composition blends organic and digital textures, conveying an intense and experimental sonic identity.',
     imageBlocks: [
       {
         type: 'single',
+        size: 'small',
+        aspect: 'square',
         images: ['/images/GUNSHOT.jpg']
       },
       {
-        type: 'single',
-        images: ['/images/Gunshot.IG.jpg']
+        type: 'single-with-text',
+        size: 'small',
+        aspect: 'square',
+        images: ['/images/Gunshot.IG.jpg'],
+        text: `· GUNSHOT
+· Single Cover
+  Artwork
+· December 16, 2025
+        © 2025 BIXBITA
+        © 2025 BIXBITA`
       }
     ]
   },
@@ -78,6 +92,7 @@ export const projects = [
       },
       {
         type: 'carousel',
+        size: 'small',
         aspect: 'square',
         images: [
           '/images/BANNER1.jpg',
@@ -99,7 +114,11 @@ export const projects = [
     imageBlocks: [
       {
         type: 'single',
-        images: ['/images/back-to-cool-1.jpg']
+        images: ['/images/BACK TO COOL.jpg']
+      },
+      {
+        type: 'single',
+        images: ['/videos/BTS.mp4']
       }
     ]
   },
@@ -114,6 +133,7 @@ export const projects = [
       {
         type: 'carousel',
         aspect: 'square',
+        size: 'small',
         images: [
           '/images/SMM1.jpg',
           '/images/SMM2.jpg',
@@ -142,10 +162,16 @@ export const projects = [
     description: 'A series of animated product pieces created for social media communication. \n\n These motion graphics are tailored to each product\'s concept, audience, and digital context, using movement as a key tool to create impact and improve message delivery. Through dynamic transitions, visual rhythm, typography, and graphic elements, each animation helps present the product in a more expressive, memorable, and scroll-stopping way.',
     imageBlocks: [
       {
-        type: 'carousel',
+        type: 'grid',
+        aspect: 'square',
+        size: 'small',
+        columns: 2,
         images: [
-          '/images/motion-design-1.jpg',
-          '/images/motion-design-2.jpg'
+          '/videos/4_5_MIZUNO IG_.mp4',
+          '/videos/[MV] Espacio Verified- Reel transformacio╠ün flor.mp4',
+          '/videos/asics_svd.mp4',
+          '/videos/111.MP4',
+          'videos/flores.mp4'
         ]
       }
     ]
