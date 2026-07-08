@@ -46,7 +46,7 @@ export const projects = [
       },
       {
         type: 'single',
-        images: ['./videos/HOME ss25_INSTAGRAM.mp4']
+        images: ['./videos/HOME_ss25_INSTAGRAM.mp4']
       }
     ]
   },
@@ -118,7 +118,7 @@ export const projects = [
       },
       {
         type: 'single',
-        images: ['/videos/BTS.mp4']
+        images: ['/videos/Bts.mp4']
       }
     ]
   },
@@ -167,11 +167,11 @@ export const projects = [
         size: 'small',
         columns: 2,
         images: [
-          '/videos/4_5_MIZUNO IG_.mp4',
-          '/videos/[MV] Espacio Verified- Reel transformacio╠ün flor.mp4',
-          '/videos/asics_svd.mp4',
+          '/videos/4 5 Mizuno Ig .mp4',
+          '/videos/[Mv] Espacio Verified- Reel Transformacio╠Ün Flor.mp4',
+          '/videos/Asics Svd.mp4',
           '/videos/111.MP4',
-          '/videos/REz4QORqF4t9ufOoATwBB3vZIA4.mp4',
+          '/videos/Rez4qorqf4t9ufooatwbb3vzia4.mp4',
           'videos/flores.mp4'
         ]
       }
