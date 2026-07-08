@@ -171,6 +171,7 @@ export const projects = [
           '/videos/[MV] Espacio Verified- Reel transformacio╠ün flor.mp4',
           '/videos/asics_svd.mp4',
           '/videos/111.MP4',
+          '/videos/REz4QORqF4t9ufOoATwBB3vZIA4.mp4',
           'videos/flores.mp4'
         ]
       }

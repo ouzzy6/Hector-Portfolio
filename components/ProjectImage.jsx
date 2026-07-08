@@ -119,7 +119,7 @@ function ProjectImage({ images, type, aspect = 'landscape', size = 'full', title
     )
   }
 
-  // Si es tipo 'carousel', mostrar carrusel automático
+  // Si es tipo 'carousel', mostrar carrusel automático (SIN INDICADORES)
   if (type === 'carousel') {
     useEffect(() => {
       const interval = setInterval(() => {
@@ -134,14 +134,6 @@ function ProjectImage({ images, type, aspect = 'landscape', size = 'full', title
     return (
       <div className={`project-image-container ${aspectClass} ${sizeClass}`}>
         {renderMedia(images[currentIndex], `${title} - ${currentIndex + 1}`, currentIndex)}
-        <div className="image-indicators">
-          {images.map((_, index) => (
-            <span 
-              key={index}
-              className={`indicator ${index === currentIndex ? 'active' : ''}`}
-            />
-          ))}
-        </div>
       </div>
     )
   }

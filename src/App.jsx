@@ -2,22 +2,23 @@ import React, { useState } from 'react'
 import './index.css'
 import { projects } from './data/projects'
 import ProjectImage from '../components/ProjectImage'
-import Lightbox from '../components/Lightbox'
 
 function App() {
   const [lightboxMedia, setLightboxMedia] = useState(null)
 
   const handleMediaClick = (media, index = 0) => {
-    // Si media es un array, lo pasamos como está
-    if (Array.isArray(media)) {
-      setLightboxMedia(media)
-    } else {
-      setLightboxMedia([media])
-    }
+    // Guardamos la URL de la imagen/video (no el array)
+    const url = Array.isArray(media) ? media[index] : media
+    setLightboxMedia(url)
   }
 
   const handleCloseLightbox = () => {
     setLightboxMedia(null)
+  }
+
+  // Detectar si es video
+  const isVideo = (url) => {
+    return url?.match(/\.(mp4|webm|ogg|mov)$/i)
   }
 
   return (
@@ -107,12 +108,27 @@ function App() {
         ))}
       </main>
 
-      {/* Lightbox */}
+      {/* Lightbox en el espacio central (sin overlay y sin botón cerrar) */}
       {lightboxMedia && (
-        <Lightbox 
-          media={lightboxMedia} 
-          onClose={handleCloseLightbox} 
-        />
+        <div className="center-lightbox" onClick={handleCloseLightbox}>
+          <div className="center-lightbox-content" onClick={(e) => e.stopPropagation()}>
+            {isVideo(lightboxMedia) ? (
+              <video 
+                src={lightboxMedia}
+                className="center-lightbox-media"
+                controls
+                autoPlay
+                playsInline
+              />
+            ) : (
+              <img 
+                src={lightboxMedia} 
+                alt="Vista ampliada"
+                className="center-lightbox-media"
+              />
+            )}
+          </div>
+        </div>
       )}
     </div>
   )
