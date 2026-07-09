@@ -13,7 +13,7 @@ body {
   font-family: 'Space Mono', 'Courier New', monospace;
   background-color: #212121;
   color: #969696;
-  line-height: 1.0;  /* ← CAMBIADO */
+  line-height: 1.4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -31,7 +31,7 @@ body {
   left: 0;
   width: 320px;
   height: 100vh;
-  padding: 16px 16px;  /* ← CAMBIADO a 16px */
+  padding: 16px;
   background-color: #212121;
   overflow-y: auto;
   display: flex;
@@ -94,12 +94,13 @@ body {
   color: #969696;
 }
 
-/* Contenido principal a la derecha */
+/* Contenido principal a la derecha - CORREGIDO */
 .main-content {
-  margin-left: 60%;
-  padding: 16px 16px 16px 16px;  /* ← CAMBIADO a 16px */
-  width: 40%;
-  max-width: 700px;
+  margin-left: auto;      /* ← Empuja el contenido a la derecha */
+  margin-right: 16px;     /* ← Margen derecho fijo de 16px */
+  padding: 16px;
+  width: 45%;
+  max-width: 800px;
   min-height: 100vh;
 }
 
@@ -113,7 +114,7 @@ body {
   font-size: 13px;
   color: #969696;
   max-width: 100%;
-  line-height: 1.2;  /* ← AÑADIDO */
+  line-height: 1.4;
   margin-bottom: 1.5rem;
 }
 
@@ -186,7 +187,7 @@ body {
 .project-description {
   font-size: 13px;
   color: #969696;
-  line-height: 1.4;  /* ← CAMBIADO de 1.8 a 1.4 */
+  line-height: 1.4;
   margin-top: 1rem;
   max-width: 100%;
   white-space: pre-line; 
@@ -269,7 +270,7 @@ body {
   font-family: 'Space Mono', 'Courier New', monospace;
   font-size: 13px;
   color: #969696;
-  line-height: 1.4;  /* ← CAMBIADO de 1.8 a 1.4 */
+  line-height: 1.4;
 }
 
 .project-text-line {
@@ -423,13 +424,13 @@ body {
 }
 
 /* ============================================ */
-/* Lightbox en el espacio central - CORREGIDO   */
+/* Lightbox en el espacio central */
 /* ============================================ */
 .center-lightbox {
   position: fixed;
   top: 0;
   left: 320px;
-  width: calc(60% - 320px);
+  width: calc(100% - 320px - 16px);  /* ← Ajustado para respetar el margen de 16px */
   height: 100vh;
   display: flex;
   align-items: center;
@@ -477,8 +478,9 @@ body {
   /* El contenido ocupa el 100% sin margen */
   .main-content {
     margin-left: 0;
+    margin-right: 0;
     width: 100%;
-    padding: 16px;  /* ← CAMBIADO a 16px fijos */
+    padding: 16px;
     max-width: 100%;
   }
 
