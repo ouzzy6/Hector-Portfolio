@@ -13,7 +13,7 @@ body {
   font-family: 'Space Mono', 'Courier New', monospace;
   background-color: #212121;
   color: #969696;
-  
+  line-height: 1.0;  /* ← CAMBIADO */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -31,7 +31,7 @@ body {
   left: 0;
   width: 320px;
   height: 100vh;
-  padding: 1rem 1rem;
+  padding: 16px 16px;  /* ← CAMBIADO a 16px */
   background-color: #212121;
   overflow-y: auto;
   display: flex;
@@ -45,11 +45,10 @@ body {
   height: 100%;
 }
 
-/* Navegación del sidebar - SIN el título HÉCTOR LAPLAZA arriba */
+/* Navegación del sidebar */
 .work-nav {
   display: flex;
   flex-direction: column;
-  
   flex: 1;
   padding-top: 0;
 }
@@ -59,7 +58,6 @@ body {
   font-weight: 400;
   color: #969696;
   text-decoration: none;
-  
   border: none;
   background: none;
   text-align: left;
@@ -71,7 +69,6 @@ body {
   font-size: 13px;
   font-weight: 400;
   color: #FBFF00;
-  
   cursor: default;
   margin-bottom: 0.25rem;
 }
@@ -100,22 +97,23 @@ body {
 /* Contenido principal a la derecha */
 .main-content {
   margin-left: 60%;
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 16px 16px 16px 16px;  /* ← CAMBIADO a 16px */
   width: 40%;
+  max-width: 700px;
   min-height: 100vh;
 }
 
 /* Introducción personal */
 .intro-section {
   margin-bottom: 3rem;
-  max-width: 800px;
+  max-width: 100%;
 }
 
 .intro-text {
   font-size: 13px;
   color: #969696;
-  
-  max-width: 600px;
+  max-width: 100%;
+  line-height: 1.2;  /* ← AÑADIDO */
   margin-bottom: 1.5rem;
 }
 
@@ -126,7 +124,7 @@ body {
 /* Secciones de proyectos */
 .project-section {
   margin-bottom: 6rem;
-  max-width: 800px;
+  max-width: 100%;
 }
 
 .project-section:last-child {
@@ -177,7 +175,6 @@ body {
   font-size: 13px;
   color: #969696;
   margin-top: 0.5rem;
-  
 }
 
 .project-year {
@@ -189,9 +186,9 @@ body {
 .project-description {
   font-size: 13px;
   color: #969696;
-  line-height: 1.8;
+  line-height: 1.4;  /* ← CAMBIADO de 1.8 a 1.4 */
   margin-top: 1rem;
-  max-width: 600px;
+  max-width: 100%;
   white-space: pre-line; 
 }
 
@@ -223,29 +220,6 @@ body {
   object-fit: cover;
   display: block;
   transition: opacity 0.5s ease;
-}
-
-/* Indicadores del carrusel */
-.image-indicators {
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 0.5rem;
-  z-index: 10;
-}
-
-.indicator {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.3);
-  transition: background-color 0.3s ease;
-}
-
-.indicator.active {
-  background-color: #FBFF00;
 }
 
 /* Separación entre bloques de imágenes */
@@ -295,17 +269,12 @@ body {
   font-family: 'Space Mono', 'Courier New', monospace;
   font-size: 13px;
   color: #969696;
-  line-height: 1.8;
+  line-height: 1.4;  /* ← CAMBIADO de 1.8 a 1.4 */
 }
 
 .project-text-line {
   margin: 0;
   padding: 0;
-  white-space: pre-wrap;
-}
-
-/* Para el texto indentado (espacios al inicio) */
-.project-text-line {
   white-space: pre-wrap;
 }
 
@@ -468,7 +437,7 @@ body {
   background-color: #212121;
   z-index: 100;
   padding: 2rem;
-  cursor: pointer;  /* ← El fondo es clickable para cerrar */
+  cursor: pointer;
 }
 
 .center-lightbox-content {
@@ -486,7 +455,7 @@ body {
   max-height: 90vh;
   object-fit: contain;
   border-radius: 4px;
-  pointer-events: none;  /* ← La imagen NO captura clics, el clic pasa al fondo y cierra */
+  pointer-events: none;
 }
 
 /* Para móviles - ocultar el lightbox central */
@@ -509,7 +478,8 @@ body {
   .main-content {
     margin-left: 0;
     width: 100%;
-    padding: 1.5rem 1.2rem;
+    padding: 16px;  /* ← CAMBIADO a 16px fijos */
+    max-width: 100%;
   }
 
   /* Quitar estilos de navegación (ya no existe) */
