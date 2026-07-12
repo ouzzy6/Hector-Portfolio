@@ -163,16 +163,16 @@ export const projects = [
     imageBlocks: [
       {
         type: 'grid',
-        aspect: 'square',
+        aspect: 'portrait',
         size: 'small',
         columns: 2,
         images: [
           '/videos/4 5 Mizuno Ig .mp4',
           '/videos/[Mv] Espacio Verified- Reel Transformacio╠Ün Flor.mp4',
           '/videos/Asics Svd.mp4',
-          '/videos/111.MP4',
+          '/videos/111.mp4',
           '/videos/Rez4qorqf4t9ufooatwbb3vzia4.mp4',
-          'videos/flores.mp4'
+          '/videos/Flores.mp4'
         ]
       }
     ]

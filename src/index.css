@@ -13,7 +13,7 @@ body {
   font-family: 'Space Mono', 'Courier New', monospace;
   background-color: #212121;
   color: #969696;
-  line-height: 1.4;
+  line-height: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -27,11 +27,11 @@ body {
 /* Sidebar fijo a la izquierda */
 .sidebar {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 16px;
+  left: 16px;
   width: 320px;
-  height: 100vh;
-  padding: 16px;
+  height: calc(100vh - 32px);
+  padding: 0px;
   background-color: #212121;
   overflow-y: auto;
   display: flex;
@@ -94,13 +94,14 @@ body {
   color: #969696;
 }
 
-/* Contenido principal a la derecha - CORREGIDO */
+/* Contenido principal a la derecha */
 .main-content {
-  margin-left: auto;      /* ← Empuja el contenido a la derecha */
-  margin-right: 16px;     /* ← Margen derecho fijo de 16px */
-  padding: 16px;
+  margin-left: auto;
+  margin-right: 16px;
+  margin-top: 16px;
+  padding: 0px;
   width: 45%;
-  max-width: 800px;
+  max-width: 570px;
   min-height: 100vh;
 }
 
@@ -114,8 +115,7 @@ body {
   font-size: 13px;
   color: #969696;
   max-width: 100%;
-  line-height: 1.4;
-  margin-bottom: 1.5rem;
+  margin-bottom: 20px;
 }
 
 .intro-text:last-of-type {
@@ -124,7 +124,7 @@ body {
 
 /* Secciones de proyectos */
 .project-section {
-  margin-bottom: 6rem;
+  margin-bottom: 51px;
   max-width: 100%;
 }
 
@@ -159,7 +159,6 @@ body {
 .project-title {
   font-size: 13px;
   font-weight: 400;
-  line-height: 1.2;
   color: #FBFF00;
   margin: 0;
   margin-right: 0.1rem;
@@ -187,7 +186,6 @@ body {
 .project-description {
   font-size: 13px;
   color: #969696;
-  line-height: 1.4;
   margin-top: 1rem;
   max-width: 100%;
   white-space: pre-line; 
@@ -225,7 +223,7 @@ body {
 
 /* Separación entre bloques de imágenes */
 .project-image-container + .project-image-container {
-  margin-top: 1rem;
+  margin-top: 51px;
 }
 
 /* Tamaño pequeño para imágenes cuadradas */
@@ -270,7 +268,6 @@ body {
   font-family: 'Space Mono', 'Courier New', monospace;
   font-size: 13px;
   color: #969696;
-  line-height: 1.4;
 }
 
 .project-text-line {
@@ -282,8 +279,9 @@ body {
 /* Grid de imágenes/videos */
 .project-grid {
   display: grid;
-  gap: 1rem;
+  gap: 51px 10px;
   margin-top: 1.5rem;
+  margin-bottom: 16px;
 }
 
 .project-grid-item {
@@ -424,19 +422,20 @@ body {
 }
 
 /* ============================================ */
-/* Lightbox en el espacio central */
+/* Lightbox en el espacio central - CORREGIDO   */
 /* ============================================ */
 .center-lightbox {
   position: fixed;
-  top: 0;
-  left: 320px;
-  width: calc(100% - 320px - 16px);  /* ← Ajustado para respetar el margen de 16px */
-  height: 100vh;
+  top: 16px;
+  left: 336px;
+  width: calc(45% - 32px);
+  max-width: 570px;
+  height: calc(100vh - 32px);
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #212121;
-  z-index: 100;
+  z-index: 1000;
   padding: 2rem;
   cursor: pointer;
 }
@@ -459,10 +458,44 @@ body {
   pointer-events: none;
 }
 
-/* Para móviles - ocultar el lightbox central */
+/* Botón cerrar del lightbox - X minimalista */
+.center-lightbox-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  color: #969696;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  z-index: 10;
+  font-family: 'Space Mono', 'Courier New', monospace;
+  line-height: 1;
+}
+
+.center-lightbox-close:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+/* Formato Portrait (vertical) */
+.project-image-portrait {
+  aspect-ratio: 3 / 4;  
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Para móviles - lightbox ocupa toda la pantalla */
 @media (max-width: 768px) {
   .center-lightbox {
-    display: none;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    max-width: 100%;
   }
 }
 
@@ -479,6 +512,7 @@ body {
   .main-content {
     margin-left: 0;
     margin-right: 0;
+    margin-top: 0;
     width: 100%;
     padding: 16px;
     max-width: 100%;
@@ -543,7 +577,7 @@ body {
   /* Grid de 2 columnas → 1 columna */
   .project-grid {
     grid-template-columns: 1fr !important;
-    gap: 0.75rem;
+    gap: 10px;
   }
 
   /* Tamaños small ocupan el 100% */

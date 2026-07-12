@@ -7,7 +7,6 @@ function App() {
   const [lightboxMedia, setLightboxMedia] = useState(null)
 
   const handleMediaClick = (media, index = 0) => {
-    // Guardamos la URL de la imagen/video (no el array)
     const url = Array.isArray(media) ? media[index] : media
     setLightboxMedia(url)
   }
@@ -16,7 +15,6 @@ function App() {
     setLightboxMedia(null)
   }
 
-  // Detectar si es video
   const isVideo = (url) => {
     return url?.match(/\.(mp4|webm|ogg|mov)$/i)
   }
@@ -40,7 +38,6 @@ function App() {
               ))}
             </nav>
           </div>
-
           <div className="sidebar-footer">
             <p>©2026 HÉCTOR LAPLAZA.</p>
             <p>All rights reserved.</p>
@@ -50,7 +47,6 @@ function App() {
 
       {/* Contenido principal a la derecha */}
       <main className="main-content">
-        {/* Introducción personal */}
         <section id="intro" className="intro-section">
           <p className="intro-text">
             I'm Héctor, a graphic & digital designer based in Barcelona, focused on art direction, 
@@ -64,33 +60,26 @@ function App() {
           </p>
         </section>
 
-        {/* Proyectos */}
         {projects.map((project) => (
           <section 
             key={project.id}
             id={`project-${project.id}`}
             className="project-section"
           >
-            {/* Información del proyecto */}
             <div className="project-info">
-              {/* Título y cliente en la misma fila */}
               <div className="project-header">
                 <h2 className="project-title">{project.title}</h2>
                 {project.client && (
                   <span className="project-client">{project.client}</span>
                 )}
               </div>
-              {/* Categoría */}
               <p className="project-meta">{project.category}</p>
-              {/* Año debajo de categoría */}
               <p className="project-year">{project.year}</p>
-              {/* Descripción del proyecto */}
               {project.description && (
                 <p className="project-description">{project.description}</p>
               )}
             </div>
             
-            {/* Bloques de imágenes */}
             {project.imageBlocks && project.imageBlocks.map((block, index) => (
               <ProjectImage 
                 key={index}
@@ -108,10 +97,14 @@ function App() {
         ))}
       </main>
 
-      {/* Lightbox en el espacio central (sin overlay y sin botón cerrar) */}
+      {/* Lightbox en el espacio central */}
       {lightboxMedia && (
         <div className="center-lightbox" onClick={handleCloseLightbox}>
           <div className="center-lightbox-content" onClick={(e) => e.stopPropagation()}>
+            {/* Botón cerrar - X minimalista */}
+            <button className="center-lightbox-close" onClick={handleCloseLightbox}>
+              ✕
+            </button>
             {isVideo(lightboxMedia) ? (
               <video 
                 src={lightboxMedia}
