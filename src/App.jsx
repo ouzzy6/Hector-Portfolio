@@ -5,14 +5,43 @@ import ProjectImage from '../components/ProjectImage'
 
 function App() {
   const [lightboxMedia, setLightboxMedia] = useState(null)
+  const [lightboxImages, setLightboxImages] = useState(null)  // ← Array de imágenes del carrusel
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)  // ← Índice actual
 
   const handleMediaClick = (media, index = 0) => {
-    const url = Array.isArray(media) ? media[index] : media
-    setLightboxMedia(url)
+    // Si es un array (carrusel), guardamos todas las imágenes
+    if (Array.isArray(media)) {
+      setLightboxImages(media)
+      setCurrentImageIndex(index)
+      setLightboxMedia(media[index])  // Mostramos la imagen actual
+    } else {
+      // Si es una sola imagen
+      setLightboxImages(null)
+      setCurrentImageIndex(0)
+      setLightboxMedia(media)
+    }
   }
 
   const handleCloseLightbox = () => {
     setLightboxMedia(null)
+    setLightboxImages(null)
+    setCurrentImageIndex(0)
+  }
+
+  const handlePrevImage = () => {
+    if (lightboxImages && lightboxImages.length > 0) {
+      const newIndex = currentImageIndex === 0 ? lightboxImages.length - 1 : currentImageIndex - 1
+      setCurrentImageIndex(newIndex)
+      setLightboxMedia(lightboxImages[newIndex])
+    }
+  }
+
+  const handleNextImage = () => {
+    if (lightboxImages && lightboxImages.length > 0) {
+      const newIndex = currentImageIndex === lightboxImages.length - 1 ? 0 : currentImageIndex + 1
+      setCurrentImageIndex(newIndex)
+      setLightboxMedia(lightboxImages[newIndex])
+    }
   }
 
   const isVideo = (url) => {
@@ -97,7 +126,7 @@ function App() {
         ))}
       </main>
 
-      {/* Lightbox en el espacio central */}
+      {/* Lightbox en el espacio central CON NAVEGACIÓN */}
       {lightboxMedia && (
         <div className="center-lightbox" onClick={handleCloseLightbox}>
           <div className="center-lightbox-content" onClick={(e) => e.stopPropagation()}>
@@ -105,6 +134,15 @@ function App() {
             <button className="center-lightbox-close" onClick={handleCloseLightbox}>
               ✕
             </button>
+
+            {/* Flecha izquierda (solo si hay más de una imagen) */}
+            {lightboxImages && lightboxImages.length > 1 && (
+              <button className="lightbox-nav lightbox-prev" onClick={handlePrevImage}>
+                ‹
+              </button>
+            )}
+
+            {/* Media */}
             {isVideo(lightboxMedia) ? (
               <video 
                 src={lightboxMedia}
@@ -119,6 +157,13 @@ function App() {
                 alt="Vista ampliada"
                 className="center-lightbox-media"
               />
+            )}
+
+            {/* Flecha derecha (solo si hay más de una imagen) */}
+            {lightboxImages && lightboxImages.length > 1 && (
+              <button className="lightbox-nav lightbox-next" onClick={handleNextImage}>
+                ›
+              </button>
             )}
           </div>
         </div>

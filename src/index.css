@@ -328,7 +328,7 @@ body {
   max-width: 90vw;
   max-height: 85vh;
   object-fit: contain;
-  border-radius: 4px;
+  border-radius: 0;
 }
 
 .lightbox-close {
@@ -354,32 +354,35 @@ body {
   max-height: 85vh;
 }
 
-/* Navegación del lightbox */
+/* Navegación del lightbox - Flechas */
 .lightbox-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   border: none;
-  color: #ffffff;
+  color: #969696;
   font-size: 3rem;
-  padding: 1rem 0.5rem;
+  padding: 1rem 0.8rem;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
   z-index: 10;
-  border-radius: 4px;
+  font-family: 'Space Mono', 'Courier New', monospace;
+  line-height: 1;
+  border-radius: 0;
 }
 
 .lightbox-nav:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
 }
 
 .lightbox-prev {
-  left: 1rem;
+  left: 0.5rem;
 }
 
 .lightbox-next {
-  right: 1rem;
+  right: 0.5rem;
 }
 
 /* Indicadores del lightbox */
@@ -434,7 +437,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  
   z-index: 1000;
   padding: 2rem;
   cursor: pointer;
@@ -470,7 +472,7 @@ body {
   max-width: 100%;
   max-height: 90vh;
   object-fit: contain;
-  border-radius: 4px;
+  border-radius: 0;
   pointer-events: none;
 }
 
@@ -510,17 +512,6 @@ body {
   max-width: 350px;
   margin-left: 0;
   margin-right: auto;
-}
-
-/* Para móviles - lightbox ocupa toda la pantalla */
-@media (max-width: 768px) {
-  .center-lightbox {
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    max-width: 100%;
-  }
 }
 
 /* ============================================ */
@@ -639,20 +630,28 @@ body {
     max-width: 100%;
   }
 
-  /* Lightbox en móvil */
-  .lightbox-content {
-    max-width: 95vw;
-    max-height: 95vh;
+  /* DESACTIVAR CLICKS EN MÓVIL */
+  .project-image {
+    pointer-events: none !important;
+    cursor: default !important;
   }
 
-  .lightbox-media {
-    max-width: 95vw;
-    max-height: 80vh;
+  /* Ocultar el lightbox en móvil */
+  .center-lightbox {
+    display: none !important;
   }
 
+  /* También desactivar clics en videos del grid */
+  .project-grid-item video,
+  .project-grid-item img {
+    pointer-events: none !important;
+    cursor: default !important;
+  }
+
+  /* Lightbox en móvil - flechas más pequeñas */
   .lightbox-nav {
     font-size: 2rem;
-    padding: 0.5rem 0.3rem;
+    padding: 0.5rem 0.5rem;
   }
 
   .lightbox-prev {
