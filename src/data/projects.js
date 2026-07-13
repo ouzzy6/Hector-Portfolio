@@ -93,7 +93,7 @@ export const projects = [
       {
         type: 'carousel',
         size: 'small',
-        aspect: '4-5',  // ← CAMBIADO de 'square' a '4-5'
+        aspect: '4-5',
         images: [
           '/images/BANNER1.jpg',
           '/images/BANNER2.jpg',
@@ -124,6 +124,33 @@ export const projects = [
   },
   {
     id: 6,
+    title: 'BODY TRANSMISSION',
+    category: 'Vinyl design',
+    year: '2025',
+    client: 'MAQUINA',
+    description: 'Vinyl design and art direction for BODY TRANSMISSION album for the Lisbon-based band MAQUINA. Built around the body as a channel for rhythm, pressure and information, the visual system combines washed-out imagery, distressed textures and a precise typographic structure. The artwork unfolds across the sleeve, inserts, labels and translucent vinyl, creating a physical object that feels both clinical and eroded, suspended between mechanical repetition and human presence.',
+    imageBlocks: [
+      {
+        type: 'single',
+        size: 'small',
+        aspect: 'square',
+        images: ['/images/bti.jpg']
+      },
+      {
+        type: 'single-with-text',
+        size: 'small',
+        aspect: 'square',
+        images: ['/images/BODY TRANSMISION RRSS.jpg'],
+        text: `· BODY TRANSMISSION
+· Vinyl Design
+  Art Direction
+· 2026
+        © 2026 MAQUINA`
+      }
+    ]
+  },
+  {
+    id: 7,
     title: 'Product Content SMM',
     category: 'Content / SMM',
     year: '2024',
@@ -132,7 +159,7 @@ export const projects = [
     imageBlocks: [
       {
         type: 'carousel',
-        aspect: '4-5',  // ← CAMBIADO de 'square' a '4-5'
+        aspect: '4-5',
         size: 'small',
         images: [
           '/images/SMM1.jpg',
@@ -154,7 +181,7 @@ export const projects = [
     ]
   },
   {
-    id: 7,
+    id: 8,
     title: 'Motion Design for Social Media',
     category: 'Motion Graphics / SMM',
     year: '2024',

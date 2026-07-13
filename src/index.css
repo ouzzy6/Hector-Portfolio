@@ -354,26 +354,25 @@ body {
   max-height: 85vh;
 }
 
-/* Navegación del lightbox - Flechas */
+/* Navegación del lightbox - Flechas básicas con → */
 .lightbox-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.05);
+  background: none;
   border: none;
   color: #969696;
-  font-size: 3rem;
-  padding: 1rem 0.8rem;
+  font-size: 2.5rem;
+  padding: 0.5rem;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
   z-index: 10;
   font-family: 'Space Mono', 'Courier New', monospace;
   line-height: 1;
   border-radius: 0;
+  transition: color 0.2s ease;
 }
 
 .lightbox-nav:hover {
-  background: rgba(255, 255, 255, 0.15);
   color: #ffffff;
 }
 
