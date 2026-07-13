@@ -429,15 +429,31 @@ body {
   top: 16px;
   left: 336px;
   width: calc(45% - 32px);
-  max-width: 570px;
+  max-width: 580px;
   height: calc(100vh - 32px);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #212121;
+  
   z-index: 1000;
   padding: 2rem;
   cursor: pointer;
+}
+
+/* Pantallas grandes (1920px en adelante) */
+@media (min-width: 1920px) {
+  .center-lightbox {
+    width: calc(65% - 32px);
+    max-width: 900px;
+  }
+}
+
+/* Pantallas muy grandes (2560px en adelante) */
+@media (min-width: 2560px) {
+  .center-lightbox {
+    width: calc(80% - 32px);
+    max-width: 1400px;
+  }
 }
 
 .center-lightbox-content {
@@ -485,6 +501,14 @@ body {
   aspect-ratio: 3 / 4;  
   max-width: 300px;
   margin-left: auto;
+  margin-right: auto;
+}
+
+/* Formato 4:5 (vertical) */
+.project-image-4-5 {
+  aspect-ratio: 4 / 5;
+  max-width: 350px;
+  margin-left: 0;
   margin-right: auto;
 }
 

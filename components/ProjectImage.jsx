@@ -13,7 +13,7 @@ function ProjectImage({ images, type, aspect = 'landscape', size = 'full', title
   }
 
   // Determinar la clase según el aspecto
-  const aspectClass = aspect === 'square' ? 'project-image-square' : aspect === 'portrait' ? 'project-image-portrait' : 'project-image-landscape'
+  const aspectClass = aspect === 'square' ? 'project-image-square' : aspect === 'portrait' ? 'project-image-portrait' : aspect === '4-5' ? 'project-image-4-5' : 'project-image-landscape'
   const sizeClass = size === 'small' ? 'project-image-small' : 'project-image-full'
 
   // Función para detectar si es video por extensión

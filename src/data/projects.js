@@ -93,7 +93,7 @@ export const projects = [
       {
         type: 'carousel',
         size: 'small',
-        aspect: 'square',
+        aspect: '4-5',  // ← CAMBIADO de 'square' a '4-5'
         images: [
           '/images/BANNER1.jpg',
           '/images/BANNER2.jpg',
@@ -132,7 +132,7 @@ export const projects = [
     imageBlocks: [
       {
         type: 'carousel',
-        aspect: 'square',
+        aspect: '4-5',  // ← CAMBIADO de 'square' a '4-5'
         size: 'small',
         images: [
           '/images/SMM1.jpg',
