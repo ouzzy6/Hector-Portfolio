@@ -9,16 +9,16 @@ export const projects = [
     imageBlocks: [
       {
         type: 'single',
-        images: ['/images/SELOGO.jpg']
+        images: ['/images/SELOGO.webp']
       },
       {
         type: 'carousel',
         images: [
-          '/images/SE1.jpg',
-          '/images/SE2.jpg',
-          '/images/SE3.jpg',
-          '/images/SE4.jpg',
-          '/images/SE5.jpg'
+          '/images/SE1.webp',
+          '/images/SE2.webp',
+          '/images/SE3.webp',
+          '/images/SE4.webp',
+          '/images/SE5.webp'
         ]
       }
     ]
@@ -34,14 +34,14 @@ export const projects = [
       {
         type: 'carousel',
         images: [
-          '/images/1.jpg',
-          '/images/2.jpg',
-          '/images/3.jpg',
-          '/images/4.jpg',
-          '/images/5.jpg',
-          '/images/6.jpg',
-          '/images/7.jpg',
-          '/images/8.jpg'
+          '/images/1.webp',
+          '/images/2.webp',
+          '/images/3.webp',
+          '/images/4.webp',
+          '/images/5.webp',
+          '/images/6.webp',
+          '/images/7.webp',
+          '/images/8.webp'
         ]
       },
       {
@@ -62,13 +62,13 @@ export const projects = [
         type: 'single',
         size: 'small',
         aspect: 'square',
-        images: ['/images/GUNSHOT.jpg']
+        images: ['/images/GUNSHOT.webp']
       },
       {
         type: 'single-with-text',
         size: 'small',
         aspect: 'square',
-        images: ['/images/Gunshot.IG.jpg'],
+        images: ['/images/Gunshot.IG.webp'],
         text: `· GUNSHOT
 · Single Cover
   Artwork
@@ -88,18 +88,18 @@ export const projects = [
     imageBlocks: [
       {
         type: 'single',
-        images: ['/images/BANNER PRINCIPAL_16_9.jpg']
+        images: ['/images/BANNER PRINCIPAL_16_9.webp']
       },
       {
         type: 'carousel',
         size: 'small',
         aspect: '4-5',
         images: [
-          '/images/BANNER1.jpg',
-          '/images/BANNER2.jpg',
-          '/images/BANNER3.jpg',
-          '/images/BANNER4.jpg',
-          '/images/BANNER5.jpg'
+          '/images/BANNER1.webp',
+          '/images/BANNER2.webp',
+          '/images/BANNER3.webp',
+          '/images/BANNER4.webp',
+          '/images/BANNER5.webp'
         ]
       }
     ]
@@ -114,7 +114,7 @@ export const projects = [
     imageBlocks: [
       {
         type: 'single',
-        images: ['/images/BACK TO COOL.jpg']
+        images: ['/images/BACK TO COOL.webp']
       },
       {
         type: 'single',
@@ -134,13 +134,13 @@ export const projects = [
         type: 'single',
         size: 'small',
         aspect: 'square',
-        images: ['/images/bti.jpg']
+        images: ['/images/bti.webp']
       },
       {
         type: 'single-with-text',
         size: 'small',
         aspect: 'square',
-        images: ['/images/BODY TRANSMISION RRSS.jpg'],
+        images: ['/images/BODY TRANSMISION RRSS.webp'],
         text: `· BODY TRANSMISSION
 · Vinyl Design
   Art Direction
@@ -162,20 +162,20 @@ export const projects = [
         aspect: '4-5',
         size: 'small',
         images: [
-          '/images/SMM1.jpg',
-          '/images/SMM2.jpg',
-          '/images/SMM3.jpg',
-          '/images/SMM4.jpg',
-          '/images/SMM5.jpg',
-          '/images/SMM6.jpg',
-          '/images/SMM7.jpg',
-          '/images/SMM8.jpg',
-          '/images/SMM9.jpg',
-          '/images/SMM10.jpg',
-          '/images/SMM11.jpg',
-          '/images/SMM12.jpg',
-          '/images/SMM13.jpg',
-          '/images/SMM14.jpg'
+          '/images/SMM1.webp',
+          '/images/SMM2.webp',
+          '/images/SMM3.webp',
+          '/images/SMM4.webp',
+          '/images/SMM5.webp',
+          '/images/SMM6.webp',
+          '/images/SMM7.webp',
+          '/images/SMM8.webp',
+          '/images/SMM9.webp',
+          '/images/SMM10.webp',
+          '/images/SMM11.webp',
+          '/images/SMM12.webp',
+          '/images/SMM13.webp',
+          '/images/SMM14.webp'
         ]
       }
     ]
