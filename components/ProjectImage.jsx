@@ -55,7 +55,7 @@ function ProjectImage({ images, type, aspect = 'landscape', size = 'full', title
         className="project-image"
         onClick={handleClick}
         style={{ cursor: 'pointer' }}
-        loading="eager"  // ← AÑADIDO: carga inmediata para carruseles
+        loading="eager"  // ← Carga inmediata
       />
     )
   }
@@ -120,7 +120,7 @@ function ProjectImage({ images, type, aspect = 'landscape', size = 'full', title
     )
   }
 
-  // Si es tipo 'carousel', mostrar carrusel automático
+  // Si es tipo 'carousel' - CARRUSEL OPTIMIZADO
   if (type === 'carousel') {
     // PRECARGA: Cargar todas las imágenes en segundo plano
     useEffect(() => {
@@ -132,15 +132,20 @@ function ProjectImage({ images, type, aspect = 'landscape', size = 'full', title
       })
     }, [images])
 
-    // CARRUSEL: Empieza inmediatamente (sin esperar a que cargue)
+    // CARRUSEL: Empieza después de 100ms (para que el navegador pinte la primera imagen)
     useEffect(() => {
-      const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => 
-          prevIndex === images.length - 1 ? 0 : prevIndex + 1
-        )
-      }, 600)
+      // Pequeño retraso de 100ms para que el navegador pinte la primera imagen
+      const timeout = setTimeout(() => {
+        const interval = setInterval(() => {
+          setCurrentIndex((prevIndex) => 
+            prevIndex === images.length - 1 ? 0 : prevIndex + 1
+          )
+        }, 400)  // ← CAMBIADO de 600 a 400ms (más rápido)
 
-      return () => clearInterval(interval)
+        return () => clearInterval(interval)
+      }, 100)
+
+      return () => clearTimeout(timeout)
     }, [images.length])
 
     return (
