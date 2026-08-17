@@ -497,11 +497,11 @@ body {
   transform: scale(1.1);
 }
 
-/* Formato Portrait (vertical) */
+/* Formato Portrait (vertical) - ALINEADO A LA IZQUIERDA */
 .project-image-portrait {
-  aspect-ratio: 3 / 4;  
-  max-width: 300px;
-  margin-left: auto;
+  aspect-ratio: 3 / 4;
+  max-width: 450px;  /* ← MÁS GRANDE */
+  margin-left: 0;    /* ← ALINEADO A LA IZQUIERDA */
   margin-right: auto;
 }
 
@@ -610,6 +610,13 @@ body {
   /* Cuadrados ocupan todo el ancho */
   .project-image-square {
     max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Portrait también ocupa todo el ancho en móvil */
+  .project-image-portrait {
+    max-width: 100% !important;
     margin-left: 0;
     margin-right: 0;
   }
