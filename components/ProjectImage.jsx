@@ -55,7 +55,7 @@ function ProjectImage({ images, type, aspect = 'landscape', size = 'full', title
         className="project-image"
         onClick={handleClick}
         style={{ cursor: 'pointer' }}
-        loading="eager"  // ← Carga inmediata
+        loading="eager"
       />
     )
   }
@@ -120,6 +120,19 @@ function ProjectImage({ images, type, aspect = 'landscape', size = 'full', title
     )
   }
 
+  // Si es tipo 'grid-2x2', mostrar cuadrícula de 2x2 (imágenes y videos mezclados)
+  if (type === 'grid-2x2') {
+    return (
+      <div className={`project-grid ${sizeClass}`} style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}>
+        {images.map((url, index) => (
+          <div key={index} className={`project-grid-item ${aspectClass}`}>
+            {renderMedia(url, `${title} - ${index + 1}`, index)}
+          </div>
+        ))}
+      </div>
+    )
+  }
+
   // Si es tipo 'carousel' - CARRUSEL OPTIMIZADO
   if (type === 'carousel') {
     // PRECARGA: Cargar todas las imágenes en segundo plano
@@ -140,7 +153,7 @@ function ProjectImage({ images, type, aspect = 'landscape', size = 'full', title
           setCurrentIndex((prevIndex) => 
             prevIndex === images.length - 1 ? 0 : prevIndex + 1
           )
-        }, 400)  // ← CAMBIADO de 600 a 400ms (más rápido)
+        }, 400)
 
         return () => clearInterval(interval)
       }, 100)

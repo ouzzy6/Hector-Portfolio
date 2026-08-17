@@ -151,6 +151,30 @@ export const projects = [
   },
   {
     id: 7,
+    title: 'ERYTHRA',
+    category: 'Art Direction',
+    year: '2026',
+    client: 'Personal Project',
+    description: 'A personal art direction project built around a fictional eyewear concept. Blending fashion imagery, product visualization and speculative design into a single visual language.',
+    imageBlocks: [
+      {
+        type: 'grid-2x2',
+        aspect: 'portrait',
+        size: 'small',
+        columns: 2,
+        images: [
+          '/images/GAFAS POST_1.jpg',
+          '/videos/Post Video 3.mp4',
+          '/images/GAFAS POST_2.jpg',
+          '/videos/Post Video 5.mp4',
+          '/images/GAFAS POST_4.jpg',
+          '/videos/Post Video 6.mp4'
+        ]
+      }
+    ]
+  },
+  {
+    id: 8,
     title: 'Product Content SMM',
     category: 'Content / SMM',
     year: '2024',
@@ -181,7 +205,7 @@ export const projects = [
     ]
   },
   {
-    id: 8,
+    id: 9,
     title: 'Motion Design for Social Media',
     category: 'Motion Graphics / SMM',
     year: '2024',
@@ -195,7 +219,7 @@ export const projects = [
         columns: 2,
         images: [
           '/videos/4 5 Mizuno Ig .mp4',
-          '/videos/[Mv] Espacio Verified- Reel Transformacio╠Ün Flor.mp4',
+          '/videos/[Mv] Espacio Verified- Reel Transformacio╠ün Flor.mp4',
           '/videos/Asics Svd.mp4',
           '/videos/111.mp4',
           '/videos/Rez4qorqf4t9ufooatwbb3vzia4.mp4',
