@@ -158,17 +158,17 @@ export const projects = [
     description: 'A personal art direction project built around a fictional eyewear concept. Blending fashion imagery, product visualization and speculative design into a single visual language.',
     imageBlocks: [
       {
-        type: 'carousel',
-        aspect: '4-5',
+        type: 'single',
+        images: ['/images/GAFAS POST.jpg']
+      },
+      {
+        type: 'grid',
+        aspect: '4-5',  // ← CAMBIADO de 'square' a '4-5' (más alargado verticalmente)
         size: 'small',
-        // size: 'small',  // ← ELIMINADO para que sea más grande
+        columns: 2,
         images: [
-          '/images/GAFAS POST_1.jpg',
-          '/images/GAFAS POST_2.jpg',
           '/videos/Post Video 3.mp4',
-          '/images/GAFAS POST_4.jpg',
           '/videos/Post Video 5.mp4',
-          
           '/videos/Post Video 6.mp4'
         ]
       }

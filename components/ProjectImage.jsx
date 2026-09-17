@@ -86,8 +86,11 @@ function ProjectImage({ images, type, aspect = 'landscape', size = 'full', title
 
   // Si es tipo 'single', mostrar un solo archivo
   if (type === 'single') {
+    // Detectar si es la imagen de ERYTHRA para mostrarla completa
+    const isErythraImage = images[0]?.includes('GAFAS POST')
+    
     return (
-      <div className={`project-image-container ${aspectClass} ${sizeClass}`}>
+      <div className={`project-image-container ${aspectClass} ${sizeClass} ${isErythraImage ? 'erythra-image' : ''}`}>
         {renderMedia(images[0], title, 0)}
       </div>
     )
@@ -109,8 +112,11 @@ function ProjectImage({ images, type, aspect = 'landscape', size = 'full', title
 
   // Si es tipo 'grid', mostrar cuadrícula de imágenes/videos
   if (type === 'grid') {
+    // Detectar si es el grid de ERYTHRA para no recortar los videos
+    const isErythraGrid = images.some(url => url.includes('Post Video'))
+    
     return (
-      <div className={`project-grid ${sizeClass}`} style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}>
+      <div className={`project-grid ${sizeClass} ${isErythraGrid ? 'erythra-grid' : ''}`} style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}>
         {images.map((url, index) => (
           <div key={index} className={`project-grid-item ${aspectClass}`}>
             {renderMedia(url, `${title} - ${index + 1}`, index)}
